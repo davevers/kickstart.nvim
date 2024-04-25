@@ -26,11 +26,12 @@ return {
           ['core.dirman'] = {
             config = {
               workspaces = {
-                notes = '~/workspace/notes',
+                notes = '~/workspace/neorg-notes',
               },
               default_workspace = 'notes',
             },
           },
+          ['core.ui.calendar'] = {},
         },
       }
 
