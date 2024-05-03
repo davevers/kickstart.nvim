@@ -22,6 +22,17 @@ return {
             config = {
               icon_preset = 'diamond',
             },
+            icons = {
+              delimiter = {
+                horizontal_line = {
+                  highlight = '@neorg.delimiters.horizontal_line',
+                },
+              },
+              code_block = {
+                conceal = true,
+                content_only = true,
+              },
+            },
           },
           ['core.dirman'] = {
             config = {
