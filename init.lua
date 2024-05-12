@@ -763,7 +763,6 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
-          { name = 'neorg' },
         },
       }
     end,
@@ -874,9 +873,10 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.neorg',
   require 'kickstart.plugins.oil',
   require 'kickstart.plugins.lualine',
+  require 'kickstart.plugins.editor',
+  require 'kickstart.plugins.ui',
 
   -- note: the import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    this is the easiest way to modularize your config.
