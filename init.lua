@@ -773,17 +773,23 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'EdenEast/nightfox.nvim',
+    'rebelot/kanagawa.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'nightfox'
+      vim.cmd.colorscheme 'kanagawa-wave'
       vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
+      vim.cmd.hi 'LineNr guibg=none ctermbg=none'
+      vim.cmd.hi 'CursorLineNr guibg=none ctermbg=none'
+      vim.cmd.hi 'SignColumn guibg=none ctermbg=none'
+      vim.cmd.hi 'GitSignsChange guibg=none ctermbg=none'
+      vim.cmd.hi 'GitSignsDelete guibg=none ctermbg=none'
+      vim.cmd.hi 'GitSignsAdd guibg=none ctermbg=none'
     end,
   },
 
