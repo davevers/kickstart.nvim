@@ -4,6 +4,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
+        theme = 'kanagawa',
         section_separators = '',
         component_separators = '',
       },

@@ -158,7 +158,7 @@ vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.termguicolors = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -380,7 +380,11 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -566,18 +570,19 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        clangd = {},
+        gopls = {},
+        pyright = {},
+        rust_analyzer = {},
+        jsonls = {},
+        cssls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+        tsserver = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -608,6 +613,8 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'fixjson',
+        'stylelint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -653,6 +660,9 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        json = { 'fixjson' },
+        jsonc = { 'fixjson' },
+        css = { 'stylelint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -883,6 +893,7 @@ require('lazy').setup({
   require 'kickstart.plugins.lualine',
   require 'kickstart.plugins.editor',
   require 'kickstart.plugins.ui',
+  require 'kickstart.plugins.neorg',
 
   -- note: the import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    this is the easiest way to modularize your config.
