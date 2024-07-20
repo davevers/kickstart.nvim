@@ -1,5 +1,6 @@
 return {
   'nvim-neorg/neorg',
+  ft = 'norg',
   config = function()
     require('neorg').setup {
       load = {
