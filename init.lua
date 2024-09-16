@@ -781,6 +781,16 @@ require('lazy').setup({
       vim.cmd.hi 'GitSignsDelete guibg=none ctermbg=none'
       vim.cmd.hi 'GitSignsAdd guibg=none ctermbg=none'
     end,
+    opts = {
+      overrides = function(colors)
+        return {
+          ['@markup.heading.1.markdown'] = { fg = colors.palette.crystalBlue, bold = true },
+          ['@markup.heading.2.markdown'] = { fg = colors.palette.surimiOrange, bold = true },
+          ['@markup.heading.3.markdown'] = { fg = colors.palette.springGreen, bold = true },
+          ['@markup.heading.4.markdown'] = { fg = colors.palette.waveAqua2, bold = true },
+        }
+      end,
+    },
   },
 
   -- Highlight todo, notes, etc in comments
