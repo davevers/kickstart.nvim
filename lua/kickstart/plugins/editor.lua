@@ -30,4 +30,9 @@ return {
     'folke/twilight.nvim',
     opts = {},
   },
+  {
+    'Aasim-A/scrollEOF.nvim',
+    event = { 'CursorMoved', 'WinScrolled' },
+    opts = {},
+  },
 }
