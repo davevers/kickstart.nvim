@@ -758,39 +758,12 @@ require('lazy').setup({
     end,
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'rebelot/kanagawa.nvim',
+  {
+    'catppuccin/nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as '', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'kanagawa-wave'
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-      vim.cmd.hi 'LineNr guibg=none ctermbg=none'
-      vim.cmd.hi 'CursorLineNr guibg=none ctermbg=none'
-      vim.cmd.hi 'SignColumn guibg=none ctermbg=none'
-      vim.cmd.hi 'GitSignsChange guibg=none ctermbg=none'
-      vim.cmd.hi 'GitSignsDelete guibg=none ctermbg=none'
-      vim.cmd.hi 'GitSignsAdd guibg=none ctermbg=none'
+      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
-    opts = {
-      overrides = function(colors)
-        return {
-          ['@markup.heading.1.markdown'] = { fg = colors.palette.crystalBlue, bold = true },
-          ['@markup.heading.2.markdown'] = { fg = colors.palette.surimiOrange, bold = true },
-          ['@markup.heading.3.markdown'] = { fg = colors.palette.springGreen, bold = true },
-          ['@markup.heading.4.markdown'] = { fg = colors.palette.waveAqua2, bold = true },
-        }
-      end,
-    },
   },
 
   -- Highlight todo, notes, etc in comments
