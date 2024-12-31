@@ -63,7 +63,7 @@ return {
   },
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'echasnovski/mini.icons' },
     opts = {
       options = {
         theme = 'catppuccin-mocha',
@@ -71,5 +71,9 @@ return {
         component_separators = '',
       },
     },
+  },
+  {
+    'echasnovski/mini.icons',
+    opts = {},
   },
 }

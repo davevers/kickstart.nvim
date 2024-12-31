@@ -15,10 +15,10 @@ return {
   },
   {
     'folke/trouble.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'echasnovski/mini.icons' },
     opts = {},
   },
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'echasnovski/mini.comment', opts = {} },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   {
     'Aasim-A/scrollEOF.nvim',
@@ -68,6 +68,28 @@ return {
   {
     'stevearc/oil.nvim',
     opts = {},
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'echasnovski/mini.icons' },
+  },
+  {
+    'echasnovski/mini.ai',
+    opts = {
+      n_lines = 500,
+    },
+  },
+  {
+    'echasnovski/mini.surround',
+    opts = {
+      mappings = {
+        add = ',sa', -- Add surrounding in Normal and Visual modes
+        delete = ',sd', -- Delete surrounding
+        find = ',sf', -- Find surrounding (to the right)
+        find_left = ',sF', -- Find surrounding (to the left)
+        highlight = ',sh', -- Highlight surrounding
+        replace = ',sr', -- Replace surrounding
+        update_n_lines = ',sn', -- Update `n_lines`
+        suffix_last = 'l', -- Suffix to search with "prev" method
+        suffix_next = 'n', -- Suffix to search with "next" method
+      },
+    },
   },
 }
