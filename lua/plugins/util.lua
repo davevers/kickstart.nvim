@@ -20,6 +20,33 @@ return {
       }
     end,
   },
+  {
+    'mrjones2014/smart-splits.nvim',
+    lazy = false,
+    opts = {},
+    config = function()
+      -- recommended mappings
+      -- resizing splits
+      -- these keymaps will also accept a range,
+      -- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
+      local splits = require 'smart-splits'
+      vim.keymap.set('n', '<C-S-h>', splits.resize_left)
+      vim.keymap.set('n', '<C-S-j>', splits.resize_down)
+      vim.keymap.set('n', '<C-S-k>', splits.resize_up)
+      vim.keymap.set('n', '<C-S-l>', splits.resize_right)
+      -- moving between splits
+      vim.keymap.set('n', '<C-h>', splits.move_cursor_left)
+      vim.keymap.set('n', '<C-j>', splits.move_cursor_down)
+      vim.keymap.set('n', '<C-k>', splits.move_cursor_up)
+      vim.keymap.set('n', '<C-l>', splits.move_cursor_right)
+      vim.keymap.set('n', '<C-\\>', splits.move_cursor_previous)
+      -- swapping buffers between windows
+      vim.keymap.set('n', '<leader><leader>h', splits.swap_buf_left)
+      vim.keymap.set('n', '<leader><leader>j', splits.swap_buf_down)
+      vim.keymap.set('n', '<leader><leader>k', splits.swap_buf_up)
+      vim.keymap.set('n', '<leader><leader>l', splits.swap_buf_right)
+    end,
+  },
   -- Color preview for hex codes
   { 'norcalli/nvim-colorizer.lua' },
 }
