@@ -22,13 +22,9 @@ return {
   },
   {
     'mrjones2014/smart-splits.nvim',
-    lazy = false,
     opts = {},
+    lazy = false,
     config = function()
-      -- recommended mappings
-      -- resizing splits
-      -- these keymaps will also accept a range,
-      -- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
       local splits = require 'smart-splits'
       vim.keymap.set('n', '<C-S-h>', splits.resize_left)
       vim.keymap.set('n', '<C-S-j>', splits.resize_down)
