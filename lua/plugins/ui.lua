@@ -4,7 +4,7 @@ return {
     dependencies = { 'echasnovski/mini.icons' },
     opts = {
       options = {
-        theme = 'auto',
+        theme = 'kanagawa',
         section_separators = '',
         component_separators = '',
       },
