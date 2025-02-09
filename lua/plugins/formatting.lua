@@ -1,5 +1,5 @@
 return {
-  { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
+  -- { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { -- Autoformat
     'stevearc/conform.nvim',
     lazy = false,
@@ -27,7 +27,7 @@ return {
         json = { 'fixjson' },
         jsonc = { 'fixjson' },
         css = { 'stylelint' },
-        markdown = { 'prettierd' },
+        -- markdown = { 'prettierd' },
         go = { 'gofmt' },
       },
     },
