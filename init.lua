@@ -148,6 +148,15 @@ vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
 -- Setup lazy.nvim
 require('lazy').setup {
   spec = {
+    {
+      'folke/snacks.nvim',
+      priority = 1000,
+      lazy = false,
+      opts = {},
+      config = function(_, opts)
+        require('snacks').setup(opts)
+      end,
+    },
     -- import your plugins
     { import = 'plugins' },
   },
