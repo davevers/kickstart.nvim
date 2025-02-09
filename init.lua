@@ -164,7 +164,7 @@ require('lazy').setup {
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { 'kanagawa-wave' } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = false },
 }
 
 -- the line beneath this is called `modeline`. see `:help modeline`
