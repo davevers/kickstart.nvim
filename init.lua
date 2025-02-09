@@ -157,6 +157,7 @@ require('lazy').setup {
         require('snacks').setup(opts)
       end,
     },
+    { 'echasnovski/mini.nvim', version = false },
     -- import your plugins
     { import = 'plugins' },
   },

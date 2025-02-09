@@ -1,7 +1,7 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'echasnovski/mini.icons' },
+    dependencies = {},
     opts = {
       options = {
         theme = 'kanagawa',
@@ -10,10 +10,7 @@ return {
       },
     },
   },
-  {
-    'echasnovski/mini.icons',
-    opts = {},
-  },
+  { require('mini.icons').setup() },
   {
     'snacks.nvim',
     opts = {

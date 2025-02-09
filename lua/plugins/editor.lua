@@ -30,10 +30,9 @@ return {
   },
   {
     'folke/trouble.nvim',
-    dependencies = { 'echasnovski/mini.icons' },
     opts = {},
   },
-  { 'echasnovski/mini.comment', opts = {} },
+  { require('mini.comment').setup() },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -50,17 +49,17 @@ return {
   {
     'stevearc/oil.nvim',
     opts = {},
-    dependencies = { 'echasnovski/mini.icons' },
   },
+  -- {
+  --   require('mini.files').setup(),
+  -- },
   {
-    'echasnovski/mini.ai',
-    opts = {
+    require('mini.ai').setup {
       n_lines = 500,
     },
   },
   {
-    'echasnovski/mini.surround',
-    opts = {
+    require('mini.surround').setup {
       mappings = {
         add = ',sa', -- Add surrounding in Normal and Visual modes
         delete = ',sd', -- Delete surrounding
