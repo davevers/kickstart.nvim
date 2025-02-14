@@ -32,7 +32,6 @@ return {
     'folke/trouble.nvim',
     opts = {},
   },
-  { require('mini.comment').setup() },
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -50,27 +49,27 @@ return {
     'stevearc/oil.nvim',
     opts = {},
   },
-  -- {
-  --   require('mini.files').setup(),
-  -- },
   {
-    require('mini.ai').setup {
-      n_lines = 500,
-    },
-  },
-  {
-    require('mini.surround').setup {
-      mappings = {
-        add = ',sa', -- Add surrounding in Normal and Visual modes
-        delete = ',sd', -- Delete surrounding
-        find = ',sf', -- Find surrounding (to the right)
-        find_left = ',sF', -- Find surrounding (to the left)
-        highlight = ',sh', -- Highlight surrounding
-        replace = ',sr', -- Replace surrounding
-        update_n_lines = ',sn', -- Update `n_lines`
-        suffix_last = 'l', -- Suffix to search with "prev" method
-        suffix_next = 'n', -- Suffix to search with "next" method
-      },
-    },
+    'mini.nvim',
+    config = function()
+      require('mini.comment').setup()
+      require('mini.files').setup()
+      require('mini.ai').setup {
+        n_lines = 500,
+      }
+      require('mini.surround').setup {
+        mappings = {
+          add = ',sa', -- Add surrounding in Normal and Visual modes
+          delete = ',sd', -- Delete surrounding
+          find = ',sf', -- Find surrounding (to the right)
+          find_left = ',sF', -- Find surrounding (to the left)
+          highlight = ',sh', -- Highlight surrounding
+          replace = ',sr', -- Replace surrounding
+          update_n_lines = ',sn', -- Update `n_lines`
+          suffix_last = 'l', -- Suffix to search with "prev" method
+          suffix_next = 'n', -- Suffix to search with "next" method
+        },
+      }
+    end,
   },
 }
