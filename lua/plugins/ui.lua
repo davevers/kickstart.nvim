@@ -1,16 +1,29 @@
 return {
+  -- {
+  --   'nvim-lualine/lualine.nvim',
+  --   dependencies = {},
+  --   opts = {
+  --     options = {
+  --       theme = 'kanagawa',
+  --       section_separators = '',
+  --       component_separators = '',
+  --     },
+  --   },
+  -- },
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = {},
-    opts = {
-      options = {
-        theme = 'kanagawa',
-        section_separators = '',
-        component_separators = '',
-      },
-    },
+    'mini.nvim',
+    config = function()
+      require('mini.icons').setup()
+      require('mini.statusline').setup()
+    end,
+    init = function()
+      package.preload['nvim-web-devicons'] = function()
+        require('mini.icons').mock_nvim_web_devicons()
+        return package.loaded['nvim-web-devicons']
+      end
+    end,
   },
-  { require('mini.icons').setup() },
+
   {
     'snacks.nvim',
     opts = {

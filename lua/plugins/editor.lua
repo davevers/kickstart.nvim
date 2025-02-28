@@ -15,7 +15,6 @@ return {
   },
   {
     'cbochs/grapple.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       scope = 'git', -- also try out "git_branch"
     },
@@ -45,10 +44,10 @@ return {
       },
     },
   },
-  {
-    'stevearc/oil.nvim',
-    opts = {},
-  },
+  -- {
+  --   'stevearc/oil.nvim',
+  --   opts = {},
+  -- },
   {
     'mini.nvim',
     config = function()
@@ -71,5 +70,16 @@ return {
         },
       }
     end,
+    keys = {
+      {
+        '<leader>fm',
+        function()
+          if not MiniFiles.close() then
+            require('mini.files').open(vim.api.nvim_buf_get_name(0), true)
+          end
+        end,
+        desc = 'Open mini.files (Directory of Current File)',
+      },
+    },
   },
 }
